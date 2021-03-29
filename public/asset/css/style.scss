@@ -1,0 +1,1297 @@
+@import url("https://fonts.googleapis.com/css?family=Sacramento");
+
+// -----
+// 設定
+// -----
+
+// 色
+$color-main: #3f51b5; // ベース色
+$color-active: #e81919; // アクティブ色
+$color-background-base: #fff; // 背景色
+$color-text-base: #333; // テキスト色
+$hover-opacity: 0.6; // 透過度
+
+// レイアウト幅
+$layout-width-canvas: 1280px;
+$layout-width-inner: 1200px;
+
+// 余白
+$padding-pc: 24px;
+$padding-tab: 24px;
+$padding-sp: 16px;
+
+// ヘッダー高さ
+$header-height-pc: 100px;
+$header-height-sp: 60px;
+
+// フォント
+$font-family-default: "游ゴシック体", "Yu Gothic", yugothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ",
+	meiryo, "MS Pゴシック", "MS PGothic", sans-serif; // 標準フォント
+$font-family-english: sans-serif;
+$font-family-base: $font-family-default;
+$font-size-base: 16px;
+$font-weight-base: 400;
+$line-height-base: 1.6;
+
+// ブレークポイント
+$breakpoints: (
+	"sp": "(max-width: 767px)",
+	"tab-only": "(min-width: 768px) and (max-width: #{$layout-width-inner + $padding-pc * 2 - 1px})",
+	"tab": "(max-width: #{$layout-width-inner + $padding-pc * 2 - 1px})",
+	"pc": "(min-width: #{$layout-width-inner})",
+);
+
+// メディアクエリー
+@mixin mq($breakpoint: sp) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
+// -----
+// 初期化
+// -----
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: $font-family-base;
+	font-size: $font-size-base;
+	font-weight: $font-weight-base;
+	color: $color-text-base;
+	line-height: $line-height-base;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: $color-background-base;
+	overflow-x: hidden;
+	overflow-wrap: break-word;
+	padding-top: $header-height-pc;
+
+	@include mq("sp") {
+		padding-top: $header-height-sp;
+	}
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	border: none;
+}
+
+// -----
+// 補完クラス
+// -----
+
+// PCだけ非表示
+.hidden-pc {
+	@include mq("pc") {
+		display: none;
+	}
+}
+
+// タブレットだけ非表示
+.hidden-tab {
+	@include mq("tab-only") {
+		display: none;
+	}
+}
+
+// スマホだけ非表示
+.hidden-sp {
+	@include mq("sp") {
+		display: none;
+	}
+}
+
+// インナー
+.inner {
+	width: $layout-width-inner;
+	max-width: 100%;
+	margin: 0 auto;
+	height: inherit;
+
+	@include mq("tab") {
+		padding-left: $padding-tab;
+		padding-right: $padding-tab;
+	}
+
+	@include mq("sp") {
+		padding-left: $padding-sp;
+		padding-right: $padding-sp;
+	}
+}
+
+// セクション
+section {
+	padding-top: 60px;
+	padding-bottom: 40px;
+
+	@include mq("sp") {
+		padding-top: 40px;
+		padding-bottom: 80px;
+	}
+}
+
+// -----
+// ヘッダー
+// -----
+
+header {
+	background-color: #222;
+}
+
+.header_inner {
+	display: flex;
+	align-items: center;
+	padding: 20px 0px;
+}
+
+.header_logo {
+	font-size: 2rem;
+	text-decoration: none;
+	color: #fff;
+	padding: 10px;
+	font-family: "Sacramento", cursive;
+	
+	@include mq('sp') {
+		font-size: 1.3rem;
+	}
+}
+
+.header_nav {
+	margin-left: auto;
+}
+
+.header_list {
+	display: flex;
+	align-items: center;
+}
+
+.header_item {
+	margin-left: 10px;
+	@include mq('sp') {
+		margin-left: 5px;
+	}
+}
+
+.header_link {
+	text-decoration: none;
+	padding: 30px 10px;
+	font-size: 1.2rem;
+	color: #fff;
+	font-weight: bold;
+
+
+	@include mq('sp') {
+		font-size: 0.8rem;
+		padding: 20px 5px;
+	}
+}
+
+.logout_button {
+	display: inline-block;
+	text-decoration: none;
+
+	font-size: 1.2rem;
+	color: #fff;
+	font-weight: bold;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+
+	@include mq('sp') {
+		font-size: 0.8rem;
+	}
+
+	&:hover {
+		transition: all .2s ease-in-out;
+		color: $color-active;
+	}
+	&:focus {
+		outline: none;
+	}
+	
+}
+
+
+// -----
+// トップ画面・検索バー
+// -----
+
+.top {
+	width: 100%;
+	padding-top: 42.96875%;
+	background: url(/asset/images/top.jpg) no-repeat center center / cover;
+	position: relative;
+}
+
+.top_inner {
+	width: 100%;
+	position: absolute;
+	top: 13%;
+	left: 0;
+}
+
+.top_box {
+	width: 100%;
+	text-align: center;
+}
+
+.top_title {
+	font-family: "Sacramento", cursive;
+	color: #fff;
+	opacity: 0.8;
+	font-size: 9rem;
+	letter-spacing: 0.1em;
+
+	@include mq('tab') {
+		font-size: 5.0rem;
+	}
+}
+
+.control {
+	display: flex;
+	justify-content: center;
+	margin-top: 60px;
+	
+	@include mq('tab') {
+		margin-top: 30px;
+	}
+
+	@include mq('sp') {
+		margin-top: 0px;
+	}
+}
+
+.control_genre {
+	width: 300px;
+	@include mq('tab') {
+		width: 150px;
+	}
+
+	@include mq('sp') {
+		width: 120px;
+	}
+}
+
+.control_picky {
+	width: 300px;
+	margin-left: 1px;
+
+	@include mq('tab') {
+		width: 150px;
+	}
+	@include mq('sp') {
+		width: 120px;
+	}
+}
+
+.control_input {
+	display: none;
+}
+
+.control_label {
+	padding: 20px;
+	display: block;
+	cursor: pointer;
+	color: #fff;
+	font-size: 1.8rem;
+	letter-spacing: 0.05em;
+	text-align: center;
+	border: #fff solid 3px;
+
+	@include mq('tab') {
+		font-size: 1.1rem;
+		padding: 10px;
+		border: #fff solid 2px;
+	}
+
+	@include mq('sp') {
+		font-size: 0.8rem;
+		padding: 8px;
+		border: #fff solid 2px;
+	}
+
+	&:hover {
+		opacity: 0.7;
+	}
+}
+
+.arrow {
+	margin-left: 50px;
+}
+
+// ジャンル
+
+.genre_radios {
+	visibility: hidden;
+	transition: 0.5s;
+}
+
+.control_input:checked + .control_label + .genre_radios {
+	visibility: visible;
+}
+
+.genre_radio {
+	border: #fff 1px solid;
+}
+
+.genre_input {
+	display: none;
+}
+
+.genre_label {
+	display: block;
+	cursor: pointer;
+	padding: 12px;
+	color: #fff;
+	letter-spacing: 0.1em;
+
+	@include mq('tab') {
+		font-size: 0.8rem;
+		padding: 8px;
+	}
+
+	@include mq('sp') {
+		font-size: 0.5rem;
+		padding: 6px;
+	}
+
+	&:hover {
+		opacity: 0.7;
+		background: rgba(232, 25, 25, 0.8);
+
+
+	}
+}
+
+.genre_input:checked + .genre_label {
+	background: rgba(232, 25, 25, 0.8);
+	color: #fff;
+	font-weight: bold;
+}
+
+// こだわり
+
+.control_input:checked + .control_label + .genre_checkboxes {
+	visibility: visible;
+}
+
+.picky_checkboxes {
+	visibility: hidden;
+	transition: 0.5s;
+}
+
+.control_input:checked + .control_label + .picky_checkboxes {
+	visibility: visible;
+}
+
+.picky_checkbox {
+	border: #fff 1px solid;
+}
+
+.picky_input {
+	display: none;
+}
+
+.picky_label {
+	display: block;
+	cursor: pointer;
+	padding: 12px;
+	color: #fff;
+	letter-spacing: 0.1em;
+
+	@include mq('tab') {
+		font-size: 0.8rem;
+		padding: 8px;
+	}
+
+	@include mq('sp') {
+		font-size: 0.5rem;
+		padding: 6px;
+	}
+
+	&:hover {
+		opacity: 0.7;
+		transition: 0.3s;
+		background-color:rgba(0,130,217,0.8);
+
+	}
+}
+
+.picky_input:checked + .picky_label {
+	background-color:rgba(0,130,217,0.8);
+
+	color: #fff;
+	font-weight: bold;
+}
+
+// 検索
+
+.control_search {
+	margin-left: 0.5px;
+}
+
+.search_button {
+	display: block;
+	cursor: pointer;
+	background: transparent;
+	text-decoration: none;
+	border: #fff 3px solid;
+	color: #fff;
+	font-weight: bold;
+	font-size: 1.4rem;
+	padding: 17px;
+	text-align: center;
+	overflow: hidden;
+	transition: 0.4s;
+	letter-spacing: 0.2em;
+
+	@include mq('tab') {
+		font-size: 1.0rem;
+		padding: 6.5px 8px;
+		margin-left: 0.5px;
+		border: #fff 2px solid;
+	}
+
+	@include mq('sp') {
+		font-size: 0.8rem;
+		padding: 4.7px 8px;
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	&:hover {
+		opacity: 0.8;
+		transition: 0.3s;
+		background: #fff;
+		color: #222;
+		font-weight: bold;
+	}
+}
+
+// -----
+// お店一覧
+// -----
+
+.shops {
+	background: rgba(0,0,0,0.96);
+
+}
+
+
+
+.section_title {
+	font-family: 'futura';
+	text-align: center;
+	font-size: 3.5rem;
+	color: #fff;
+	font-weight: bold;
+	letter-spacing: 0.05em;
+
+	@include mq('tab') {
+	font-size: 2.5rem;
+	}
+
+	@include mq('sp') {
+		font-size: 2.0rem;
+	}
+
+}
+.shops_items {
+	margin-top: 70px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+@media (max-width: 767px) {
+	.shops_items {
+		margin-top: 30px;
+		display: block;
+	}
+}
+
+.shops_item {
+	background-color: #fff;
+	height: 100%;
+	min-height: 315px;
+	border-radius: 3px;
+	box-shadow: 0 0 2px gray;
+	text-decoration: none;
+}
+
+@media (min-width: 1200px) {
+	.shops_item {
+		margin: 0 50px 50px 0;
+		width: calc(33.3333333% - 100px / 3);
+	}
+	.shops_item:nth-child(3n) {
+		margin-right: 0;
+	}
+}
+
+@media (max-width: 1247px) {
+	.shops_item {
+		width: calc(33.3333333% - 100px / 3);
+		margin: 0 50px 50px 0;
+	}
+	.shops_item:nth-child(3n) {
+		margin-right: 0px;
+	}
+}
+
+@media (max-width: 767px) {
+	.shops_item {
+		width: 100%;
+	}
+}
+
+@media (max-width: 767px) {
+	.shops_item_head {
+		margin: 0 auto;
+	}
+}
+
+.shops_item_head img {
+	width: 100%;
+	max-width: 560px;
+	height: 315px;
+	@include mq('tab') {
+		height: 250px;
+	}
+}
+
+.shops_item_body {
+	text-align: left;
+}
+
+.shop_name {
+	padding: 10px;
+
+}
+
+.shop_top_name {
+	font-size: 1.5rem;
+	font-weight: bold;
+	text-decoration: none;
+	color: $color-text-base;
+
+	@include mq('tab') {
+		font-size: 1.2rem;
+	}
+	
+}
+
+.shop_comment {
+	margin-left: auto;
+	padding: 0.5rem;
+	color: $color-text-base;
+	font-size: 1.1rem;
+	
+
+}
+
+.shop_comment p {
+	font-weight: bold;
+	line-height: 1.6;
+	border: 1px solid #fff;
+	padding: 0.2rem 0.5rem;
+	border-radius: 5px;
+	background:$color-active;
+	color: #fff;
+	display: inline-block;
+	
+}
+
+.shop_item_bottom {
+	display: flex;
+}
+
+.shop_like {
+	padding: 0.5rem;
+}
+
+
+.like {
+	font-size: 1.2rem;
+}
+
+.like_red {
+	color: $color-active;
+}
+
+
+.like_btn {
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	padding: 0.5rem;
+	&:focus {
+	outline: none;
+	}
+}
+
+.count_likes {
+	display: inline-block;
+}
+
+// -----
+// 店舗詳細
+// -----
+
+.shop_detail_inner {
+	background: #222;
+	padding: 30px;
+	box-shadow: 0 0 5px gray;
+	border-radius: 2px;
+}
+
+.shop_detail_image {
+	padding-top: 20px;
+	margin: 0 auto;
+	max-width: 400px;
+	max-height: 400px;
+	width: 100%;
+	height: 100%;
+
+}
+
+.shop_detail_box {
+	width: 80%;
+	padding-top: 30px;
+	margin: 0 auto;
+}
+
+.shop_block {
+	display: flex;
+	align-items: center;
+	margin: 50px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #fff;
+}
+
+.shop_goggle_address {
+	width: 80%;
+	height: 350px;
+	display: block;
+	margin:  0 auto;
+}
+
+.shop_detail_title {
+	color: #fff;
+	width: 20%;
+	font-size: 1.1rem;
+}
+
+.shop_detail_content {
+	color: #fff;
+	font-size: 1.2rem;
+	p {
+		font-weight: bold;
+	}
+}
+
+.tell {
+	text-decoration: none;
+	color: #fff;
+}
+
+.url {
+	text-decoration: none;
+	color: #fff;
+
+	&:hover {
+		opacity: .7;
+		transition: .3s;
+	}
+}
+
+.situation_name {
+	display: inline-block;
+	font-size: 1.1rem;
+	background-color:rgba(0,130,217,0.7);
+	margin-left: 20px;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	padding: 0.5rem 0.8rem;
+	&:first-child  {
+		margin-left: 0px;
+	}
+}
+
+.genre_name {
+	display: inline-block;
+	font-size: 1.1rem;
+	background:rgba(232,25,25,0.7);
+	padding: 0.5rem 0.8rem;
+	border: 1px solid #fff;
+	border-radius: 5px;
+}
+
+.shop_show_name {
+	text-decoration: none;
+	color: #fff;
+	font-weight: bold;
+	font-size: 1.8rem;
+	padding: 0.5rem 0.5rem 0.5rem 0;
+
+	&:hover {
+		opacity: .8;
+		transition: .3s;
+	}
+}
+
+.shop_detail_title_second {
+	margin-top: 8px;
+}
+
+.count_shop {
+	color: #3f51b5;
+	font-weight: bold;
+}
+
+.user_icon {
+	&:hover {
+		color: #3f51b5;
+		opacity: .7;
+		transition: all .2s ease-in-out;
+	}
+}
+
+.user_box_top {
+	text-align: right;
+}
+
+.profile_edit_button {
+	text-align: right;
+	text-decoration: none;
+	padding: 0.3em 0.5em;
+	background: #3f51b5;
+	color: #fff;
+	border-radius: 5px;
+
+	@include mq('sp') {
+		font-size: 0.8rem;
+	}
+
+	&:hover {
+		background: #fff;
+		color: #3f51b5;
+	}
+}
+
+
+// -----
+// フォーム
+// -----
+
+.form {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+
+textarea,
+input {
+	::-webkit-input-placeholder {
+		color: rgba(255, 255, 255, 0.7);
+	}
+	::-moz-placeholder {
+		color: rgba(255, 255, 255, 0.7);
+	}
+	:-ms-input-placeholder {
+		color: rgba(255, 255, 255, 0.7);
+	}
+	&:focus {
+		outline: 0 transparent solid;
+		::-webkit-input-placeholder {
+			color: rgba(0, 0, 0, 0.7);
+		}
+		::-moz-placeholder {
+			color: rgba(0, 0, 0, 0.7);
+		}
+		:-ms-input-placeholder {
+			color: rgba(0, 0, 0, 0.7);
+		}
+	}
+}
+
+textarea {
+	resize: vertical;
+	height: 120px;
+	width: calc(100% - 3rem);
+	
+		@include mq('sp') {
+			height: 80px;
+		}
+}
+
+.form_box {
+	background: #222;
+	box-shadow: 0 0 5px gray;
+	border-radius: 2px;
+	margin: auto;
+	max-width: 60%;
+	padding: 20px;
+
+	@include mq('tab') {
+		max-width: 80%;
+	}
+
+	@include mq('sp') {
+		max-width: 90%;
+	}
+}
+.form_top {
+	color: #fff;
+	font-size: 1.5rem;
+	margin: 0 auto;
+	padding: 20px 15px;
+	text-align: center;
+
+	.fa-stack-1x {
+		color: black;
+	}
+}
+
+.form_input {
+	background: transparent;
+	border: 0 solid;
+	border-bottom: 1px solid rgba(white, 0.5);
+	color: white;
+	display: block;
+	margin: 30px;
+	padding: 0.5rem;
+	transition: 0.3s;
+	width: calc(100% - 3rem);
+
+	&:focus {
+		background: white;
+		color: black;
+		transition: 0.3s;
+	}
+}
+
+.form_submit {
+	border: 1px solid white;
+	cursor: pointer;
+	background: transparent;
+	color: white;
+	display: block;
+	margin: 1rem auto;
+	min-width: 1px;
+	padding: 5px 15px;
+	transition: 0.3s;
+	font-weight: bold;
+	font-size: 0.9rem;
+	&:hover,
+	&:focus {
+		background: white;
+		color: black;
+		transition: 0.3s;
+		outline: none;
+	}
+}
+
+.form_bottom {
+	margin-top: 10px;
+	text-align: center;
+}
+
+.login_forgot_pass {
+	font-size: 0.8rem;
+	color: #fff;
+	text-decoration: none;
+	cursor: pointer;
+	display: block;
+	opacity: 0.7;
+	padding: 10px;
+	text-align: center;
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.logged_in {
+	font-size: 0.8rem;
+	color: #fff;
+	text-decoration: none;
+	cursor: pointer;
+	display: inline-block;
+	padding: 10px;
+	text-align: center;
+	&:hover {
+		opacity: 0.7;
+	}
+}
+
+.shop_image {
+	margin-top: 30px;
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
+	display: block;
+	margin-left: 40px;
+	
+	@include mq('sp') {
+	width: 120px;
+	height: 120px;
+	margin: 0 auto;
+	}
+}
+
+.input_shop_image {
+	display: none;
+}
+
+.shop_image_form {
+	margin: 30px;
+}
+
+.form_input_tell {
+	background: transparent;
+	border: 0 solid;
+	border-bottom: 1px solid rgba(white, 0.5);
+	color: white;
+	display: block;
+	margin: 30px;
+	padding: 0.5rem;
+	transition: 0.3s;
+	width: calc(100% - 3rem);
+
+	&:focus {
+		background: white;
+		color: black;
+		transition: 0.3s;
+	}
+}
+
+.form_textarea {
+	border: 0 solid;
+	border-bottom: 1px solid rgba(white, 0.5);
+	color: white;
+	display: block;
+	margin: 15px 30px 30px 30px;
+	padding: 0.5rem;
+	transition: 0.3s;
+
+	&:focus {
+		background: white;
+		color: black;
+		transition: 0.3s;
+	}
+}
+
+.label_comment {
+	display: inline-block;
+	margin: 10px 30px 10px 30px;
+	font-size: 0.75rem;
+	padding: 0.4rem;
+	font-weight: bold;
+	color: #fff;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(white, 0.5);
+}
+
+.email_comment{
+	text-align: center;
+	padding: 40px 0px  20px 0px;
+	color: #fff;
+
+	p {
+		text-align: center;
+		font-size: 0.9rem;
+	}
+}
+
+
+.select {
+	opacity: 0.7;
+	outline: none;
+	background: transparent;
+	border: 0 solid;
+	border-bottom: 1px solid rgba(white, 0.5);
+	color: white;
+	display: block;
+	margin: 29px;
+	padding: 0.5rem 0.5rem 0.5rem 0.25rem;
+	transition: 0.3s;
+	width: 20%;
+
+	@include mq('tab') {
+		width: 50%;
+	}
+}
+
+.create_picky_label {
+	box-sizing: border-box;
+
+	color: #fff;
+	font-size: 0.9rem;
+	cursor: pointer;
+    display: inline-block;
+    padding: 5px 30px;
+	position: relative;
+	
+	@include mq('tab') {
+		padding: 5px 30px;
+	}
+
+
+	&::before {
+		background: #fff;
+		border: 1px solid #231815;
+		content: '';
+		display: block;
+		height: 16px;
+		left: 5px;
+		margin-top: -8px;
+		position: absolute;
+		top: 50%;
+		width: 16px;
+	}
+	&::after {
+		border-right: 3px solid $color-active;
+		border-bottom: 3px solid $color-active;
+		content: '';
+		display: block;
+		height: 9px;
+		left: 10px;
+		margin-top: -7px;
+		opacity: 0;
+		position: absolute;
+		top: 50%;
+		transform: rotate(45deg);
+		width: 5px;
+	}
+}
+
+.create_picky_input {
+
+	margin-bottom: 30px;
+	display: none;
+
+}
+
+.create_picky_input:checked + .create_picky_label::after {
+    opacity: 1;
+}
+
+.create_checkbox_group {
+	margin-left: 30px;
+	@include mq('tab') {
+		margin-left: 20px;
+	}
+	@include mq('sp') {
+		margin-left: 20px;
+	}
+}
+
+.show_top {
+	text-align: right;
+}
+
+.edit_button {
+	padding: 0.5rem 1rem;
+	letter-spacing: 0.1rem;
+	background: #3f51b5;
+	color: #fff;
+	font-weight: bold;
+	border-radius: 5px;
+
+	&:hover {
+		background: #fff;
+		color: #3f51b5;
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.delete {
+	text-align: right;
+}
+
+.delete_button {
+	background: $color-active;
+	color: #fff;
+	padding: 0.5rem;
+	border: none;
+	border-radius: 5px;
+	font-weight: bold;
+	cursor: pointer;
+
+
+	&:hover {
+		background: #fff;
+		color: $color-active;
+		transition: all .2s ease-in-out;
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.picker {
+	cursor: pointer;
+}
+
+.avatar_circle {
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
+
+	@include mq('sp') {
+		width: 100px;
+		height: 100px;
+	}
+}
+
+//エラー
+
+.errors_inner {
+	background:rgba(232,25,25,0.7);
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.errors {
+	text-align: left;
+}
+
+.error_msg {
+	color: #fff;
+	font-weight: bold;
+	line-height: $line-height-base;
+	
+}
+
+// -----
+// ユーザー
+// -----
+
+
+
+.user_inner {
+	background: #222;
+	padding: 50px;
+	box-shadow: 0 0 5px gray;
+	border-radius: 2px;
+}
+
+.my-white {
+	color: #fff;
+
+}
+
+.user_box {
+	text-align: center;
+	padding-bottom: 80px;
+}
+
+.user_image {
+	display: inline-block;
+	margin-top: 30px;
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
+
+	@include mq('sp') {
+	width: 140px;
+	height: 140px;
+	margin: 0 auto;
+	}
+}
+
+
+
+.user_name {
+	padding: 30px;
+	p {
+		font-size: 2rem;
+		color: #fff;
+		font-weight: bold;
+	}
+}
+
+// -----
+// フッター
+// -----
+
+footer {
+	background-color: #222;
+}
+
+.footer_inner {
+	text-align: center;
+}
+
+.footer_logo {
+	display: inline-block;	
+	font-size: 2.5rem;
+	text-decoration: none;
+	padding: 30px;
+	color: #fff;
+
+	font-family: "Sacramento", cursive;
+}
+
+.footer_copyright {
+	text-align: center;
+	padding: 20px;
+	color: #fff;
+}
+
+// -----
+// ページネーション
+// -----
+
+.pagination {
+	display: flex;
+	padding-left: 0;
+	list-style: none;
+	border-radius: 0.25rem;
+	justify-content: center;
+	
+}
+
+.page-link {
+	position: relative;
+	display: block;
+	padding: 0.75rem 1rem;
+	margin-left: -1px;
+	line-height: 1.25;
+	color: #fff;
+	font-size: 1.2rem;
+	font-weight: bold;
+	border: 1px solid #dee2e6;
+	cursor: pointer;
+	outline: none;
+
+	&:hover {
+		z-index: 2;
+		color: $color-main;
+		text-decoration: none;
+		background-color: #e9ecef;
+	}
+
+	&:focus {
+		z-index: 3;
+		outline: 0;
+	}
+}
