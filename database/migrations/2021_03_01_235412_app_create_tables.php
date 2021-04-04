@@ -14,7 +14,7 @@ class AppCreateTables extends Migration
     public function up()
     {   
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('name')->unique();
             $table->string('avatar_file_name')->nullable();
             $table->string('email')->unique();
@@ -26,7 +26,7 @@ class AppCreateTables extends Migration
 
         Schema::create('follows', function (Blueprint $table){
 
-            $table->id();
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('follower_id');
             $table->unsignedBigInteger('followee_id');
             $table->timestamps();
@@ -38,21 +38,21 @@ class AppCreateTables extends Migration
 
         Schema::create('genres', function (Blueprint $table){
 
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('name');
             $table->timestamps();
         });
         
         Schema::create('situations', function (Blueprint $table){
 
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('name');
             $table->timestamps();
         });
         
         Schema::create('shops', function (Blueprint $table) {
 
-            $table->id();
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('genre_id');
             $table->string('shop_file_name')->nullable();
@@ -73,7 +73,7 @@ class AppCreateTables extends Migration
         //shopsとsituationsの中間テーブル
         Schema::create('shop_situation', function (Blueprint $table){
 
-            $table->id();
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('shop_id');
             $table->unsignedBigInteger('situation_id');
             $table->timestamps();
@@ -86,7 +86,7 @@ class AppCreateTables extends Migration
         //shopsとusersの中間テーブル いいね機能
         Schema::create('likes', function (Blueprint $table){
 
-            $table->id();
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('shop_id');
             $table->timestamps();
