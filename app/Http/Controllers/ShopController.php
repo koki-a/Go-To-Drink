@@ -91,11 +91,13 @@ class ShopController extends Controller
     {
         $genres = Genre::orderBy('id','asc')->get();
         $situations = Situation::orderBy('id','asc')->get();
-        
+
+
         return view('shops.edit')
         ->with('shop',$shop)
         ->with('genres',$genres)
         ->with('situations',$situations);
+
     }
 
     //店舗更新処理
@@ -127,6 +129,7 @@ class ShopController extends Controller
 
         return redirect()->route('shops.top')
         ->with('shop',$shop);
+
     }
 
     //店舗削除機能

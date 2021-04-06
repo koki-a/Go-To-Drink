@@ -20,10 +20,10 @@
                 <img src="{{asset('asset/images/shop-default.png') }}" style="object-fit: cover; width: 200px; height: 200px;" class="shop_image">
             </label>
         </span>
-        <input type="name" name="name" class="form_input" autofocus="true" required="true" placeholder="お店の名前" />
-        <input type="address" name="address" class="form_input" autofocus="true" required="true" placeholder="住所" />
-        <input type="url" name="url" class="form_input" autofocus="true" required="true" placeholder="URL" />
-        <input type="tell" name="tell" class="form_input_tell" required="true" placeholder="TEL 0115551234" />
+        <input type="name" name="name" class="form_input" value="{{ old('name') }}" autofocus="true" required="true" placeholder="お店の名前" />
+        <input type="address" name="address" class="form_input" value="{{ old('address') }}" autofocus="true" required="true" placeholder="住所" />
+        <input type="url" name="url" class="form_input" value="{{ old('url') }}" autofocus="true" required="true" placeholder="URL" />
+        <input type="tell" name="tell" class="form_input_tell" value="{{ old('tell') }}" required="true" placeholder="TEL 0115551234" />
         <div class="select_box">
             <select name="genre" class="select">
                 <option value="" hidden>ジャンルを選択</option>
@@ -33,7 +33,7 @@
             </select>
             <div class="create_checkbox_group">
                 @foreach ($situations as $situation)
-                <input class="create_picky_input" type="checkbox" name="situation_ids[]" value="{{ $situation->id }}" id="{{ $situation->id }}">
+                <input class="create_picky_input" type="checkbox" name="situation_ids[]" id="{{ $situation->id }}" value="{{ $situation->id }}" @if (is_array(old("situation_ids")) && in_array("$situation->id", old('situation_ids'), true)) checked @endif>
                 <label class="create_picky_label" for="{{ $situation->id }}">{{ $situation->name }}</label>
                 @endforeach
             </div>

@@ -42,17 +42,15 @@
                 <select name="genre" class="select">
                     <option value="" hidden>ジャンルを選択</option>
                     @foreach ($genres as $genre)
-                    <option value="{{ $genre->id }}" {{old('genre') == $genre->id ? selected : ''}}>
-                        {{$genre->name}}
-                    </option>
+                        <option value="{{ $genre->id }}" @if($shop->genre_id == $genre->id)selected @endif>{{$genre->name}}</option>
                     @endforeach
                 </select>
                 <div class="create_checkbox_group">
-                    @foreach ($situations as $situation)
-                    <input class="create_picky_input" type="checkbox" name="situation_ids[]" value="{{ $situation->id }}">
+                @foreach ($situations as $situation)
+                    <input class="create_picky_input" type="checkbox" name="situation_ids[]" value="{{ $situation->id }}" id="{{ $situation->id }}" {{ old('situation_ids') == '4' ? checked : ''}}>
                     <label class="create_picky_label" for="{{ $situation->id }}">{{ $situation->name }}</label>
-                    @endforeach
-                </div>
+                @endforeach
+            </div>
     
     
             </div>
@@ -60,6 +58,10 @@
             <textarea name="comment" class="form_textarea" id="" placeholder=""></textarea>
     
             <button type="submit"class="form_submit">Update</button>
+            <p style="color: #fff;">
+
+                {{old('genre')}}aaaa
+            </p>
     
         </form>
     </div>
