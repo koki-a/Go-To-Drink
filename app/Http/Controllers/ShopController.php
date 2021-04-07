@@ -73,10 +73,10 @@ class ShopController extends Controller
         
         DB::beginTransaction();
         try {
-            DB::commit();
             $shop->save();
             $situation_ids = $request->situation_ids;
             $shop->situations()->sync($situation_ids,false);
+            DB::commit();
         } catch (\Exception $e) {
             DB::rollback();
             abort(500);
@@ -91,7 +91,6 @@ class ShopController extends Controller
     {
         $genres = Genre::orderBy('id','asc')->get();
         $situations = Situation::orderBy('id','asc')->get();
-
 
         return view('shops.edit')
         ->with('shop',$shop)
@@ -118,10 +117,10 @@ class ShopController extends Controller
         
         DB::beginTransaction();
         try {
-            DB::commit();
-            $shop->save();
+            $shop->update();
             $situation_ids = $request->situation_ids;
-            $shop->situations()->sync($situation_ids,false);
+            $shop->situations()->sync($situation_ids);
+            DB::commit();
         } catch (\Exception $e) {
             DB::rollback();
             abort(500);

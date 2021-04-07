@@ -617,6 +617,10 @@ header {
   border-radius: 2px;
 }
 
+.shop_img {
+  margin: 0 auto;
+}
+
 .shop_detail_image {
   padding-top: 20px;
   margin: 0 auto;
