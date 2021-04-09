@@ -568,9 +568,16 @@ header {
 	width: 100%;
 	max-width: 560px;
 	height: 315px;
+
+	&:hover {
+
+		opacity: .8;
+	}
+
 	@include mq('tab') {
 		height: 250px;
 	}
+
 }
 
 .shops_item_body {
@@ -656,10 +663,6 @@ header {
 	padding: 30px;
 	box-shadow: 0 0 5px gray;
 	border-radius: 2px;
-}
-
-.shop_img {
-	margin: 0 auto;
 }
 
 .shop_detail_image {

@@ -58,7 +58,7 @@
             </div>
             <div class="shops_items">
                 @foreach($shops as $shop)
-                <div class="shops_item wow fadeIn"　data-wow-duration="3s">
+                <div class="shops_item wow fadeIn" data-wow-duration="3s">
                     <a href="{{ route('shops.show',[$shop->id]) }}" class="shops_item_head">
                         @if(!empty($shop->shop_file_name))
                         <img src="/storage/{{ $shop->shop_file_name }}" alt="shop-image">
