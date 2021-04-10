@@ -491,8 +491,6 @@ header {
 
 }
 
-
-
 .section_title {
 	font-family: 'futura';
 	text-align: center;
@@ -510,14 +508,12 @@ header {
 	}
 
 }
+
 .shops_items {
-	margin-top: 70px;
+	margin-top: 50px;
 	display: flex;
 	flex-wrap: wrap;
-}
-
-@media (max-width: 767px) {
-	.shops_items {
+	@include mq("sp") {
 		margin-top: 30px;
 		display: block;
 	}
@@ -529,38 +525,29 @@ header {
 	min-height: 315px;
 	border-radius: 3px;
 	box-shadow: 0 0 2px gray;
-	text-decoration: none;
-}
 
-@media (min-width: 1200px) {
-	.shops_item {
+	@include mq("pc") {
 		margin: 0 50px 50px 0;
 		width: calc(33.3333333% - 100px / 3);
+		&:nth-child(3n) {
+			margin-right: 0;
+		}
 	}
-	.shops_item:nth-child(3n) {
-		margin-right: 0;
-	}
-}
 
-@media (max-width: 1247px) {
-	.shops_item {
-		width: calc(33.3333333% - 100px / 3);
+	@include mq("tab") {
+		width: calc(50% - 50px / 2);
 		margin: 0 50px 50px 0;
-	}
-	.shops_item:nth-child(3n) {
-		margin-right: 0px;
-	}
-}
 
-@media (max-width: 767px) {
-	.shops_item {
+		&:nth-child(3n) {
+			margin-right: 50px;
+		}
+		&:nth-child(2n) {
+			margin-right: 0;
+		}
+	}
+
+	@include mq("sp") {
 		width: 100%;
-	}
-}
-
-@media (max-width: 767px) {
-	.shops_item_head {
-		margin: 0 auto;
 	}
 }
 
@@ -570,7 +557,6 @@ header {
 	height: 315px;
 
 	&:hover {
-
 		opacity: .8;
 	}
 

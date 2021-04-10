@@ -475,7 +475,7 @@ header {
 }
 
 .shops_items {
-  margin-top: 70px;
+  margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -493,7 +493,6 @@ header {
   min-height: 315px;
   border-radius: 3px;
   box-shadow: 0 0 2px gray;
-  text-decoration: none;
 }
 
 @media (min-width: 1200px) {
@@ -508,23 +507,20 @@ header {
 
 @media (max-width: 1247px) {
   .shops_item {
-    width: calc(33.3333333% - 100px / 3);
+    width: calc(50% - 50px / 2);
     margin: 0 50px 50px 0;
   }
   .shops_item:nth-child(3n) {
-    margin-right: 0px;
+    margin-right: 50px;
+  }
+  .shops_item:nth-child(2n) {
+    margin-right: 0;
   }
 }
 
 @media (max-width: 767px) {
   .shops_item {
     width: 100%;
-  }
-}
-
-@media (max-width: 767px) {
-  .shops_item_head {
-    margin: 0 auto;
   }
 }
 
