@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+//ゲストログイン
+Route::get('guest', 'Auth\LoginController@guestLogin')->name('login.guest');
+
 //トップ画面表示
 Route::get('/','ShopController@index')->name('shops.top');
 

@@ -7,6 +7,7 @@
             <nav class="header_nav">
                 <ul class="header_list">
                     @guest
+                    <li class="header_item"><a href="{{ route('login.guest') }}" class="header_link">ゲスト</a></li>
                     <li class="header_item"><a href="{{ route('shops.create') }}" class="header_link">投稿する</a></li>
                     <li class="header_item"><a href="{{ route('register') }}" class="header_link">ユーザ登録</a></li>
                     <li class="header_item"><a href="{{ route('login') }}" class="header_link">ログイン</a></li>

@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
+
 
 class LoginController extends Controller
 {
@@ -37,4 +39,17 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    //ゲストログイン用の認証
+    public function guestLogin(){
+
+        $email = 'guest@gmail.com';
+        $password = 'guestpassword';
+    
+        if (Auth::attempt(['email' => $email, 'password' => $password])) {
+            return redirect('/');
+        }
+    
+        return redirect('/404');
+        }
 }
