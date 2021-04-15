@@ -28,7 +28,7 @@ $header-height-sp: 60px;
 $font-family-default: "游ゴシック体", "Yu Gothic", yugothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ",
 	meiryo, "MS Pゴシック", "MS PGothic", sans-serif; // 標準フォント
 $font-family-english: sans-serif;
-$font-family-base: $font-family-default;
+$font-family-base: "Mplus 1p";
 $font-size-base: 16px;
 $font-weight-base: 400;
 $line-height-base: 1.6;
@@ -190,6 +190,8 @@ header {
 	font-size: 1.2rem;
 	color: #fff;
 	font-weight: bold;
+	font-family: $font-family-base;
+
 
 
 	@include mq('sp') {
@@ -492,7 +494,7 @@ header {
 }
 
 .section_title {
-	font-family: 'futura';
+	font-family: $font-family-base;
 	text-align: center;
 	font-size: 3.5rem;
 	color: #fff;
@@ -700,6 +702,7 @@ header {
 	color: #fff;
 	width: 20%;
 	font-size: 1.1rem;
+	font-family: $font-family-base;
 
 	@include mq('sp') {
 		font-size: 0.7rem;
@@ -710,6 +713,7 @@ header {
 .shop_detail_content {
 	color: #fff;
 	font-size: 1.2rem;
+	line-height: 1.4rem;
 	p {
 		font-weight: bold;
 	}
@@ -833,7 +837,6 @@ header {
 	padding-top: 50px;
 	padding-bottom: 50px;
 }
-
 
 textarea,
 input {

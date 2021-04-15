@@ -14,11 +14,13 @@
     <link rel="shortcut icon" href="{{ asset('/favicon.ico') }}">
     <!-- original css -->
     <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/earlyaccess/mplus1p.css" rel="stylesheet" />
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet">
     <!-- reset.css -->
     <link rel="stylesheet" href="{{ asset('asset/css/reset.css') }}">
-    <!-- Scripts -->
+    <!-- scripts -->
     <script src="{{ asset('asset/js/app.js') }}" defer></script>
     <!-- wow -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
