@@ -91,6 +91,7 @@ section {
 
 header {
   background-color: #222;
+  font-family: "Mplus 1p";
 }
 
 .header_inner {
@@ -271,6 +272,7 @@ header {
   letter-spacing: 0.05em;
   text-align: center;
   border: #fff solid 3px;
+  font-family: "Mplus 1p";
 }
 
 @media (max-width: 1247px) {
@@ -320,6 +322,7 @@ header {
   padding: 12px;
   color: #fff;
   letter-spacing: 0.1em;
+  font-family: "Mplus 1p";
 }
 
 @media (max-width: 1247px) {
@@ -374,6 +377,7 @@ header {
   padding: 12px;
   color: #fff;
   letter-spacing: 0.1em;
+  font-family: "Mplus 1p";
 }
 
 @media (max-width: 1247px) {
@@ -1077,6 +1081,7 @@ textarea {
   display: inline-block;
   padding: 5px 30px;
   position: relative;
+  font-family: "Mplus 1p";
 }
 
 @media (max-width: 1247px) {

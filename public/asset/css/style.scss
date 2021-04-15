@@ -150,6 +150,7 @@ section {
 
 header {
 	background-color: #222;
+	font-family: $font-family-base;
 }
 
 .header_inner {
@@ -313,6 +314,8 @@ header {
 	letter-spacing: 0.05em;
 	text-align: center;
 	border: #fff solid 3px;
+	font-family: $font-family-base;
+
 
 	@include mq('tab') {
 		font-size: 1.1rem;
@@ -360,6 +363,8 @@ header {
 	padding: 12px;
 	color: #fff;
 	letter-spacing: 0.1em;
+	font-family: $font-family-base;
+
 
 	@include mq('tab') {
 		font-size: 0.8rem;
@@ -414,6 +419,8 @@ header {
 	padding: 12px;
 	color: #fff;
 	letter-spacing: 0.1em;
+	font-family: $font-family-base;
+
 
 	@include mq('tab') {
 		font-size: 0.8rem;
@@ -1081,6 +1088,8 @@ textarea {
     display: inline-block;
     padding: 5px 30px;
 	position: relative;
+	font-family: $font-family-base;
+
 	
 	@include mq('tab') {
 		padding: 5px 30px;
