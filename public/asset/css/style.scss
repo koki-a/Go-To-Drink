@@ -76,7 +76,7 @@ body {
 	overflow-x: hidden;
 	overflow-wrap: break-word;
 	padding-top: $header-height-pc;
-	-webkit-text-size-adjust: none;
+	-webkit-text-size-adjust: 100%;
 
 
 	@include mq("sp") {
