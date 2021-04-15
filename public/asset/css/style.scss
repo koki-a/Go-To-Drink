@@ -76,6 +76,8 @@ body {
 	overflow-x: hidden;
 	overflow-wrap: break-word;
 	padding-top: $header-height-pc;
+	-webkit-text-size-adjust: none;
+
 
 	@include mq("sp") {
 		padding-top: $header-height-sp;
@@ -468,7 +470,7 @@ header {
 
 	@include mq('sp') {
 		font-size: 0.8rem;
-		padding: 4.4px 8px;
+		padding: 4.6px 8px;
 	}
 
 	&:focus {
