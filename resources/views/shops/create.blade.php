@@ -41,7 +41,7 @@
 
         </div>
         <label for="" class="label_comment">COMMENT</label>
-        <textarea name="comment" class="form_textarea" id="" placeholder=""></textarea>
+        <textarea name="comment" class="form_textarea" id="" placeholder="{{  $shop->comment ?? old('comment') }}"></textarea>
 
         <button type="submit"class="form_submit">Register</button>
 
