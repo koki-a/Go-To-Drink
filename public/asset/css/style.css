@@ -149,6 +149,12 @@ header {
   }
 }
 
+@media (max-width: 767px) {
+  .header_link {
+    font-size: 0.6rem;
+  }
+}
+
 .logout_button {
   display: inline-block;
   text-decoration: none;
@@ -274,6 +280,7 @@ header {
   text-align: center;
   border: #fff solid 3px;
   font-family: "Mplus 1p";
+  border-radius: 15px;
 }
 
 @media (max-width: 1247px) {
@@ -294,6 +301,7 @@ header {
 
 .control_label:hover {
   opacity: 0.7;
+  transition: .3s;
 }
 
 .arrow {
@@ -311,6 +319,7 @@ header {
 
 .genre_radio {
   border: #fff 1px solid;
+  border-radius: 10px;
 }
 
 .genre_input {
@@ -342,13 +351,16 @@ header {
 
 .genre_label:hover {
   opacity: 0.7;
+  transition: all .3s;
   background: rgba(232, 25, 25, 0.8);
+  border-radius: 10px;
 }
 
 .genre_input:checked + .genre_label {
   background: rgba(232, 25, 25, 0.8);
   color: #fff;
   font-weight: bold;
+  border-radius: 10px;
 }
 
 .control_input:checked + .control_label + .genre_checkboxes {
@@ -366,6 +378,7 @@ header {
 
 .picky_checkbox {
   border: #fff 1px solid;
+  border-radius: 10px;
 }
 
 .picky_input {
@@ -379,6 +392,7 @@ header {
   color: #fff;
   letter-spacing: 0.1em;
   font-family: "Mplus 1p";
+  border-radius: 10px;
 }
 
 @media (max-width: 1247px) {
@@ -399,10 +413,12 @@ header {
   opacity: 0.7;
   transition: 0.3s;
   background-color: rgba(0, 130, 217, 0.8);
+  border-radius: 10px;
 }
 
 .picky_input:checked + .picky_label {
   background-color: rgba(0, 130, 217, 0.8);
+  border-radius: 10px;
   color: #fff;
   font-weight: bold;
 }
@@ -425,6 +441,7 @@ header {
   overflow: hidden;
   transition: 0.4s;
   letter-spacing: 0.2em;
+  border-radius: 10px;
 }
 
 @media (max-width: 1247px) {
@@ -813,6 +830,7 @@ header {
 .profile_edit_button:hover {
   background: #fff;
   color: #3f51b5;
+  transition: all .3s;
 }
 
 .form {

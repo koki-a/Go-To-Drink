@@ -196,10 +196,13 @@ header {
 	font-family: $font-family-base;
 
 
-
 	@include mq('sp') {
 		font-size: 0.8rem;
 		padding: 20px 5px;
+	}
+
+	@include mq('sp') {
+		font-size: 0.6rem;
 	}
 }
 
@@ -315,6 +318,7 @@ header {
 	text-align: center;
 	border: #fff solid 3px;
 	font-family: $font-family-base;
+	border-radius: 15px;
 
 
 	@include mq('tab') {
@@ -331,6 +335,7 @@ header {
 
 	&:hover {
 		opacity: 0.7;
+		transition: .3s;
 	}
 }
 
@@ -351,6 +356,7 @@ header {
 
 .genre_radio {
 	border: #fff 1px solid;
+	border-radius: 10px;
 }
 
 .genre_input {
@@ -378,7 +384,9 @@ header {
 
 	&:hover {
 		opacity: 0.7;
+		transition: all .3s;
 		background: rgba(232, 25, 25, 0.8);
+		border-radius: 10px;
 
 
 	}
@@ -388,6 +396,8 @@ header {
 	background: rgba(232, 25, 25, 0.8);
 	color: #fff;
 	font-weight: bold;
+	border-radius: 10px;
+
 }
 
 // こだわり
@@ -407,6 +417,7 @@ header {
 
 .picky_checkbox {
 	border: #fff 1px solid;
+	border-radius: 10px;
 }
 
 .picky_input {
@@ -420,6 +431,7 @@ header {
 	color: #fff;
 	letter-spacing: 0.1em;
 	font-family: $font-family-base;
+	border-radius: 10px;
 
 
 	@include mq('tab') {
@@ -436,13 +448,13 @@ header {
 		opacity: 0.7;
 		transition: 0.3s;
 		background-color:rgba(0,130,217,0.8);
-
+		border-radius: 10px;
 	}
 }
 
 .picky_input:checked + .picky_label {
 	background-color:rgba(0,130,217,0.8);
-
+	border-radius: 10px;
 	color: #fff;
 	font-weight: bold;
 }
@@ -467,6 +479,7 @@ header {
 	overflow: hidden;
 	transition: 0.4s;
 	letter-spacing: 0.2em;
+	border-radius: 10px;
 
 	@include mq('tab') {
 		font-size: 1.0rem;
@@ -834,6 +847,7 @@ header {
 	&:hover {
 		background: #fff;
 		color: #3f51b5;
+		transition: all .3s;
 	}
 }
 
