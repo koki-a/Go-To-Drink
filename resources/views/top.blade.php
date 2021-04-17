@@ -53,7 +53,7 @@
     
     <section class="shops">
         <div class="shops_inner inner">
-            <div class="section_title wow fadeInUp" data-wow-duration="3s">
+            <div class="section_title wow fadeInUp" data-wow-duration="2s">
                 <h1 class="">New Shop</h1>
             </div>
             <div class="shops_items">
