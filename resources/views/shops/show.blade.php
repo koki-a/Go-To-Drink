@@ -57,7 +57,7 @@
                     <p>電話番号：</p>
                 </div>
                 <div class="shop_detail_content">
-                    <a class="tell" href="tell:{{ $shop->tell}}">{{ $shop->tell}}</a>
+                    <a class="tell" href="tel:{{ $shop->tell}}">{{ $shop->tell}}</a>
                 </div>
             </div>
             <div class="shop_block">
