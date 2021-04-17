@@ -738,6 +738,7 @@ header {
 	line-height: 1.4rem;
 	p {
 		font-weight: bold;
+		vertical-align: bottom;
 	}
 	@include mq('sp') {
 		font-size: 0.9rem;

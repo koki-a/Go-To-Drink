@@ -712,6 +712,7 @@ header {
 
 .shop_detail_content p {
   font-weight: bold;
+  vertical-align: bottom;
 }
 
 @media (max-width: 767px) {
