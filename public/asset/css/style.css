@@ -677,6 +677,10 @@ header {
   border-bottom: 1px solid #fff;
 }
 
+.shop_block:last-child {
+  border-bottom: none;
+}
+
 .shop_goggle_address {
   width: 80%;
   height: 350px;

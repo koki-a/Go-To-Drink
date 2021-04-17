@@ -707,6 +707,9 @@ header {
 	margin: 50px;
 	padding-bottom: 10px;
 	border-bottom: 1px solid #fff;
+	&:last-child {
+		border-bottom: none;
+	}
 }
 
 .shop_goggle_address {
