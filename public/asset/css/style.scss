@@ -1048,11 +1048,11 @@ textarea {
 .form_textarea {
 	border: 0 solid;
 	border-bottom: 1px solid rgba(white, 0.5);
-	color: white;
 	display: block;
 	margin: 15px 30px 30px 30px;
 	padding: 0.5rem;
 	transition: 0.3s;
+	color: #333;
 
 	&:focus {
 		background: white;

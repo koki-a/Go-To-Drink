@@ -55,7 +55,7 @@
     
             </div>
             <label for="" class="label_comment">COMMENT</label>
-            <textarea name="comment" class="form_textarea" id="" placeholder="{{  $shop->comment ?? old('comment') }}"></textarea>
+            <textarea name="comment" class="form_textarea" id="">@if(isset($shop->comment)){{ $shop->comment }}@endif</textarea>
     
             <button type="submit"class="form_submit">Update</button>
         </form>
