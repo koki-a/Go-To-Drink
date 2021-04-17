@@ -173,6 +173,12 @@ header {
   }
 }
 
+@media (max-width: 767px) {
+  .logout_button {
+    font-size: 0.6rem;
+  }
+}
+
 .logout_button:hover {
   transition: all .2s ease-in-out;
   color: #e81919;
