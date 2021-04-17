@@ -208,6 +208,7 @@ header {
 
 .logout_button {
 	display: inline-block;
+	margin-top: 2px;
 	text-decoration: none;
 	font-family: $font-family-base;
 	font-size: 1.2rem;
@@ -223,6 +224,7 @@ header {
 
 	@include mq('sp') {
 		font-size: 0.6rem;
+		margin-top: 5px;
 	}
 
 	&:hover {

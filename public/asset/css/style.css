@@ -157,6 +157,7 @@ header {
 
 .logout_button {
   display: inline-block;
+  margin-top: 2px;
   text-decoration: none;
   font-family: "Mplus 1p";
   font-size: 1.2rem;
@@ -176,6 +177,7 @@ header {
 @media (max-width: 767px) {
   .logout_button {
     font-size: 0.6rem;
+    margin-top: 5px;
   }
 }
 
