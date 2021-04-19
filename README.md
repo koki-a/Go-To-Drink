@@ -7,10 +7,12 @@ URL:http://gotodrink.work <br>
 コロナウィルスの影響で飲みに行きづらいのがきっかけと、
 元々飲みに行くが好きで、他人にお勧めのお店を紹介することも多かったので、自身のデータベースのような意味も含め作成しました。
 
+
 ![FireShot Capture 029 - GoToDrink - gotodrink work](https://user-images.githubusercontent.com/71471284/115212276-4b18f000-a13b-11eb-89d2-372457467925.png)
 
 
-![Uploading FireShot Capture 034 - GoToDrink - gotodrink.work.png…]()
+![FireShot Capture 034 - GoToDrink - gotodrink work](https://user-images.githubusercontent.com/71471284/115212604-a814a600-a13b-11eb-8b96-9a6cd39990a0.png)
+
 
 
 
@@ -32,12 +34,14 @@ URL:http://gotodrink.work <br>
   - RDS
   - Route53
 
+
 # 機能一覧
 - ログイン・ログアウト
 - CRUD機能（ユーザー・店舗登録、編集、削除）
 - マイページ
 - いいね処理（Ajax/Vue)
 - 複数条件検索機能
+
 
 # 最後に
 まだまだ実装したい機能やデザインで少し気になる所は少しありますが、とりあえず完成までと思い作成しました。<br>
