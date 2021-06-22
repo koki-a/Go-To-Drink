@@ -15,13 +15,11 @@ class RestappController extends Controller
      */
     public function index()
     {
-        $shops = Shop::all();
+        $shops = Shop::orderBy('id','asc')->get();
         return response()->json(
             [
                 'shops' => $shops
             ],
-            200,[],
-            JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT
         );
     }
 
