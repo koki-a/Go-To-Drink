@@ -19,7 +19,7 @@ class RestappController extends Controller
         return response()->json(
             [
                 'shops' => $shops
-            ],
+            ]
         );
     }
 
