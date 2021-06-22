@@ -61,3 +61,5 @@ Route::prefix('users')
         Route::put('/{name}','UserController@update')->name('update');
     });
 
+//API
+Route::resource('rest','RestappController', ['only' => ['index', 'show', 'create', 'store', 'destroy']]);
