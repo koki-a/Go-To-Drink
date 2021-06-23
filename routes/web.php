@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Auth::routes();
+//API
+Route::resource('rest','RestappController', ['only' => ['index', 'show', 'create', 'store', 'destroy']]);
 
 //ゲストログイン
 Route::get('guest', 'Auth\LoginController@guestLogin')->name('login.guest');
@@ -60,6 +62,3 @@ Route::prefix('users')
         Route::get('/{name}/edit','UserController@edit')->name('edit');
         Route::put('/{name}','UserController@update')->name('update');
     });
-
-//API
-Route::resource('rest','RestappController', ['only' => ['index', 'show', 'create', 'store', 'destroy']]);
